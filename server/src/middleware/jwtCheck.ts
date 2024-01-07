@@ -7,10 +7,11 @@ interface jwtCheckExtendRequestBody extends Request {
 
 export const jwtCheck = (req: jwtCheckExtendRequestBody, res: Response, next: NextFunction) => {
 	const authHeader = req.headers.authorization;
+	const JWT_SECRET = "0x13782udsah3281nhdsa89e21nbid"
 
 	if (authHeader) {
 		const token = authHeader.split(' ')[1];
-		jwt.verify(token, process.env.JWT_SECRET as string, (err, user) => {
+		jwt.verify(token, JWT_SECRET as string, (err, user) => {
 			if (err) {
 				res.status(401).json({ message: "No token provided" });
 				return ;

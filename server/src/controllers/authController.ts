@@ -8,6 +8,8 @@ interface LoginRequestBody {
     password: string;
 }
 
+const JWT_SECRET = "0x13782udsah3281nhdsa89e21nbid"
+
 export const login = async (req: Request<{}, {}, LoginRequestBody>, res: Response) => {
     try {
         const { email, password } = req.body;
@@ -20,7 +22,7 @@ export const login = async (req: Request<{}, {}, LoginRequestBody>, res: Respons
             return res.status(400).json({ message: "Incorrect email or password" });
         }
 
-        const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string);
+        const token = jwt.sign({ id: user.id }, JWT_SECRET);
 
         return res.status(200).json({ token });
     } catch (error) {
@@ -38,6 +40,7 @@ interface RegisterRequestBody {
 
 export const register = async (req: Request<{}, {}, RegisterRequestBody>, res: Response) => {
 	try {
+		console.log("\n\nreq body: \n\n", req.body);
 			const { email, password, confirmPassword, username } = req.body;
 
 			const existingUser = await User.findOne({
@@ -60,7 +63,7 @@ export const register = async (req: Request<{}, {}, RegisterRequestBody>, res: R
 					username
 			});
 
-			const token = jwt.sign({ id: newUser.id }, process.env.JWT_SECRET as string);
+			const token = jwt.sign({ id: newUser.id }, JWT_SECRET);
 
 			return res.status(200).json({ token, message: "You have successfully created a new account." });
 	} catch (error) {

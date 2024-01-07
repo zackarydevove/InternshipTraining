@@ -1,0 +1,46 @@
+<div class='sticky top-[87px] z-20 bg-white dark:bg-[#191819] w-full rounded-xl p-5 text-black dark:text-white'>
+	<div class='flex items-center '>
+		<div class='flex items-center gap-4 flex-1'>
+			<div class='h-14 w-14 bg-black rounded-full hover:cursor-pointer'
+				(click)="navigateToProfile()"></div>
+			<div class='flex flex-col'>
+				<ng-container *ngIf="true; else viewMode">
+					<input class='bg-white dark:bg-[#191819] text-lg font-bold' placeholder="Username" />
+				</ng-container>
+				<ng-template #viewMode>
+					<p class='text-lg text-black dark:text-white font-bold'>Username</p>
+				</ng-template>
+				<p class='text-sm text-[#5e5d5e]'>0 friends</p>
+			</div>
+		</div>
+		<div class='h-8 w-8 flex justify-center items-center rounded-full dark:hover:text-blue-500 transition hover:cursor-pointer'>
+			<i class="fa-solid fa-pen-to-square"></i>
+		</div>
+	</div>
+	<hr class='border-[#e2dee3] my-6'/>
+	<div class='flex flex-col gap-4 ml-2'>
+		<div class='flex gap-2 items-center'>
+			<div class='h-8 w-8 flex justify-center items-center'>
+				<i class="fa-solid fa-location-dot"></i>
+			</div>
+			<ng-container *ngIf="true; else viewLocation">
+				<input class='bg-white dark:bg-[#191819] text-sm text-[#5e5d5e]' placeholder="Location" />
+			</ng-container>
+			<ng-template #viewLocation>
+				<p class='text-sm text-[#5e5d5e]'>Location</p>
+			</ng-template>
+		</div>
+		<div class='flex gap-2 items-center'>
+			<div class='h-8 w-8 flex justify-center items-center'>
+				<i class="fa-solid fa-briefcase"></i>
+			</div>
+			<ng-container *ngIf="true; else viewJob">
+				<input class='bg-white dark:bg-[#191819] text-sm text-[#5e5d5e]' placeholder="Job" />
+			</ng-container>
+			<ng-template #viewJob>
+				<p class='text-sm text-[#5e5d5e]'>Job Title</p>
+			</ng-template>
+		</div>
+	</div>
+</div>
+  

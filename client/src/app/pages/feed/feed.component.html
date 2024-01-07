@@ -1,0 +1,15 @@
+<div class='relative w-full min-h-screen flex flex-col bg-[#f4f3f4] dark:bg-[#0e0c0e]'>
+	<app-navbar class='sticky top-0 z-30'></app-navbar>
+	<div class='flex h-full pt-8 px-6 sm:px-24 gap-12 '>
+		<div class='w-[450px] max-lg:hidden'>
+			<app-feed-profile-info></app-feed-profile-info>
+		</div>
+		<div class='flex flex-col gap-12 w-full max-w-[700px]'>
+			<app-send-post></app-send-post>
+			<app-feed-posts />
+		</div>
+		<div class='flex flex-col gap-12 w-[450px] max-2xl:hidden'>
+			<app-random-add class="sticky top-[87px] z-20 "></app-random-add>
+		</div>
+	</div>
+</div>

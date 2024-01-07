@@ -1,0 +1,45 @@
+<div class='bg-white dark:bg-[#191819] flex justify-between px-6 max-sm:gap-3 sm:px-24 py-2'>
+	<div class='flex items-center'>
+		<div class='h-3/4 lg:w-[200px] sm:w-[100px] w-[50px] bg-logo bg-no-repeat bg-contain hover:cursor-pointer'
+			(click)="navigate('/feed')">
+		</div>
+	</div>
+  
+	<div class='flex items-center'>
+		<div class='relative flex justify-center items-center bg-[#eeedef] dark:bg-[#2e2d2e] h-10 rounded-2xl px-4 w-full'>
+			<input 
+				class='bg-[#eeedef] dark:bg-[#2e2d2e] outline-none text-black dark:text-white max-sm:w-3/4' 
+				placeholder='Search...'
+			>
+			<i class="fa-solid fa-magnifying-glass text-black dark:text-white"></i>
+			<div *ngIf="showDropdown">
+			</div>
+		</div>
+	</div>
+  
+	<div class='text-black dark:text-white flex items-center lg:hidden'>
+		<div class="h-8 w-8 bg-black rounded-full"></div>
+	</div>
+  
+	<div class='text-black dark:text-white flex gap-10 items-center max-lg:hidden'>
+		<div class='h-8 w-8 flex justify-center items-center rounded-full hover:bg-[#eeedef] dark:hover:bg-[#2e2d2e] transition hover:cursor-pointer'
+			(click)="toggleDarkMode()">
+			<i class="fa fa-moon" *ngIf="!darkModeService.isDarkModeEnabled()"></i>
+			<i class="fa fa-sun" *ngIf="darkModeService.isDarkModeEnabled()"></i>
+		</div>
+	
+		<div class='h-8 w-8 flex justify-center items-center rounded-full hover:bg-[#eeedef] dark:hover:bg-[#2e2d2e] transition hover:cursor-pointer'>
+			<i class="fa fa-bell"></i>
+		</div>
+	
+		<div class='h-8 w-8 flex justify-center items-center rounded-full hover:bg-[#eeedef] dark:hover:bg-[#2e2d2e] transition hover:cursor-pointer'>
+			<i class="fa-solid fa-message"></i>
+		</div>
+	
+		<div class='h-8 w-8 flex justify-center items-center rounded-full hover:bg-[#eeedef] dark:hover:bg-[#2e2d2e] transition hover:cursor-pointer'
+			(click)="handleLogout()">
+			<i class="fa fa-sign-out-alt"></i>
+		</div>
+	</div>
+</div>
+  

@@ -1,7 +1,9 @@
 import { Sequelize } from 'sequelize';
 
-const DATABASE_STRING = process.env.DATABASE_STRING as string;
-const sequelize = new Sequelize(DATABASE_STRING);
+const DATABASE_STRING = "postgres://postgres:admin@localhost:5432/internshiptraining"
+const sequelize = new Sequelize(DATABASE_STRING, {
+	dialect: 'postgres',
+});
 
 sequelize.authenticate()
   .then(() => console.log('Database connected.'))

@@ -1,0 +1,33 @@
+<div class='bg-white dark:bg-[#191819] w-full rounded-xl p-5 text-[#cac9ca]'>
+	<div class='flex items-center '>
+	  <div class='flex items-center gap-4 flex-1'>
+		<div class='h-14 w-14 bg-black rounded-full hover:cursor-pointer'
+			(click)="navigate('/profile/${fakeProfile.username}')"></div>
+		<div class='flex flex-col'>
+		  <p class='text-lg font-bold'>{{ fakeProfile.username }}</p>
+		  <p class='text-sm text-[#5e5d5e]'>{{ fakeProfile.followersCount }} friends</p>
+		</div>
+	  </div>
+	  <div>
+		<div class='h-8 w-8 flex justify-center items-center rounded-full dark:hover:text-blue-500 transition hover:cursor-pointer'>
+			<i class="fa-solid fa-pen-to-square"></i>
+		</div>
+	  </div>
+	</div>
+	<hr class='border-[#e2dee3] my-6'/>
+	<div class='flex flex-col gap-4 ml-2'>
+	  <div class='flex gap-2 items-center'>
+		<div class='h-8 w-8 flex justify-center items-center'>
+			<i class="fa-solid fa-location-dot"></i>
+		</div>
+		<p class='text-sm text-[#5e5d5e]'>{{ fakeProfile.location }}</p>
+	  </div>
+	  <div class='flex gap-2 items-center'>
+		<div class='h-8 w-8 flex justify-center items-center'>
+			<i class="fa-solid fa-briefcase"></i>
+		</div>
+		<p class='text-sm text-[#5e5d5e]'>{{ fakeProfile.job }}</p>
+	  </div>
+	</div>
+</div>
+  

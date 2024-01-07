@@ -1,0 +1,25 @@
+<div class='flex flex-col gap-3'>
+	<ng-container *ngIf="comments.length > 0 && comments[0]">
+	  <div class='flex flex-col gap-2'>
+		<div>
+			<p class='text-black dark:text-white text-sm hover:cursor-pointer hover:underline hover:text-[#646264] transition'>See more comments</p>
+		</div>
+		<div>
+			<app-comment [comment]="comments[0]"></app-comment>
+		</div>
+	  </div>
+	</ng-container>
+	<div class='flex w-full gap-2'>
+		<div class='h-9 w-9 rounded-full bg-black flex-shrink-0'></div>
+		<div class='flex flex-1 max-w-full rounded-2xl bg-[#eeedef] dark:bg-[#2e2d2e] px-6 pt-3 '>
+			<textarea class='flex-1 bg-[#eeedef] dark:bg-[#2e2d2e] p-1 outline-none resize-none hide-scrollbar text-black dark:text-white'
+				placeholder="What's on your mind... ?"
+				value=""></textarea>
+			<div class='flex justify-center items-center text-black dark:text-white hover:text-blue-500 hover:cursor-pointer'>
+				<i class="fa-regular fa-paper-plane"></i>
+			</div>
+
+		</div>
+	</div>
+  </div>
+  
