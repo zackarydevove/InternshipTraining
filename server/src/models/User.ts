@@ -10,9 +10,9 @@ interface UserAttributes {
 	email: string;
 	password: string;
 	username: string;
-  location: string;
-  job: string;
-  followersCount: number;
+  location?: string;
+  job?: string;
+  followersCount?: number;
 }
 
 class User extends Model<UserAttributes> implements UserAttributes {
