@@ -1,6 +1,5 @@
 import express from 'express';
 import { register, login } from '../controllers/authController';
-// import { jwtCheck } from '../middleware/jwtCheck';
 
 const router = express.Router();
 
